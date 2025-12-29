@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的投资系统仪表盘</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Microsoft YaHei', sans-serif; }
+        body { background: #f5f7fa; color: #333; padding: 20px; max-width: 1000px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eaeaea; }
+        .header h1 { color: #2c3e50; margin-bottom: 10px; }
+        .header p { color: #7f8c8d; font-size: 0.95em; }
+        .chart-container { width: 100%; height: 550px; background: white; border-radius: 12px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); padding: 25px; margin-bottom: 25px; }
+        .footer { text-align: center; color: #95a5a6; font-size: 0.9em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eaeaea; }
+        .data-info { background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 0.9em; }
+        .highlight { color: #3498db; font-weight: bold; }
+        @media (max-width: 768px) { .chart-container { height: 450px; padding: 15px; } body { padding: 10px; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📈 我的投资系统仪表盘</h1>
+        <p>实际净值 vs 10%年化目标线 | 数据更新日期: <span id="updateDate">--</span></p>
+    </div>
+
+    <div class="chart-container" id="mainChart"></div>
+
+    <div class="data-info">
+        <p>💡 此图表为<strong>演示版本</strong>，展示了从<strong>2025-11-25</strong>开始的模拟数据。</p>
+        <p>🔧 <strong>如何接入你的真实数据：</strong>将本地的<code>data.json</code>文件（由你的Asp.net程序生成）替换项目中的同名文件即可。</p>
+        <p>📱 <strong>页面自适应</strong>，可在手机、平板、电脑上直接访问生成的GitHub Pages网址查看。</p>
+    </div>
+
+    <div class="footer">
+        <p>系统基于 ECharts 构建 | 数据更新频率：每个交易日收盘后</p>
+    </div>
+
+    <script src="echarts-config.js"></script>
+</body>
+</html>
